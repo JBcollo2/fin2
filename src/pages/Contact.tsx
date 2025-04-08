@@ -70,7 +70,7 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Contact Cards */}
+        {/* Contact Card */}
         <section className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, index) => (

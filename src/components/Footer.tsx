@@ -14,7 +14,7 @@ const Footer = () => {
           
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Stay ahead with FutureFi</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">Stay ahead with Lumelink</h3>
               <p className="text-gray-300">
                 Get the latest updates, news, and exclusive offers directly to your inbox.
               </p>
@@ -94,7 +94,7 @@ const Footer = () => {
         {/* Bottom footer */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} FutureFi. All rights reserved.
+            © {new Date().getFullYear()} Lumelink. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">

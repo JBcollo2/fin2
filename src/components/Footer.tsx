@@ -37,8 +37,8 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-6">
               <span className="text-2xl font-bold mr-2">
-                <span className="text-futuristic-cyan">Future</span>
-                <span className="text-white">Fi</span>
+                <span className="text-futuristic-cyan">Lume</span>
+                <span className="text-white">link</span>
               </span>
             </div>
             <p className="text-gray-400 text-sm mb-6">

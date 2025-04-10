@@ -20,7 +20,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 // Replace this placeholder URL with the actual URL of your uploaded image
-const imageUrl = "https://i.imgur.com/NLRz57d.jpeg"; // Updated with the Imgur image address
+// const imageUrl = "https://i.imgur.com/NLRz57d.jpeg"; 
 
 const Contact = () => {
     const contactInfo = [
@@ -63,10 +63,10 @@ const Contact = () => {
         // { icon: Github, name: "GitHub", url: "#", username: "lumelink-tech" },
     ];
 
-    const companyLocation = "Freedom Heights Building, Off Langata Road-Langata District";
+    const companyLocation = "Freedom Heights Building, Off Langata Road, Langata District, Nairobi, Kenya";
 
     return (
-        <div className="min-h-screen bg-futuristic-dark text-white">
+        <div className="min-h-screen bg-futuristic-dark text-white overflow-x-hidden">
             <Navbar />
 
             <main className="container mx-auto px-4 py-12">
@@ -77,11 +77,11 @@ const Contact = () => {
 
                     <div className="max-w-5xl mx-auto text-center relative z-10">
                         <div className="flex justify-center items-center mb-6">
-                            <img
+                            {/* <img
                                 src={imageUrl}
                                 alt="Lumelink Technologies Logo"
                                 className="w-48 rounded-md shadow-md mr-8"
-                            />
+                            /> */}
                             {/* Placeholder for Office/Team Photo - Replace with your actual image */}
                             {/* <img
                                 src="/images/office-team-placeholder.jpg"

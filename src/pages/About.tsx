@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Shield, Users, TrendingUp, BarChart3, Clock, CheckCircle } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
+import logo3 from "@/logo/logo3.jpeg";
+// import logo2 from "@/logo/logo2.jpeg";
 
 const About = () => {
   // Create refs for all major sections
@@ -52,7 +54,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-futuristic-dark text-white">
+    <div className="min-h-screen bg-futuristic-dark text-white  overflow-x-hidden">
       <Navbar />
 
       <main className="container mx-auto px-4 py-12">
@@ -282,6 +284,23 @@ const About = () => {
           </div>
         </section>
 
+
+        {/* {"new section"} */}
+        <section className="py-20">
+          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div className="text-center md:text-left mb-8 md:mb-0">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Lumelink: Your Trusted Partner in ICT Solutions
+              </h2>
+              <p className="text-gray-300">
+              Founded just two years ago, Lumelink Technologies Limited has swiftly established itself as a go-to provider of comprehensive technology services. Our expertise covers ICT hardware and software supply, telecom infrastructure, maintenance, and transformative tech projects that drive business success.
+              </p>
+            </div>
+            <div className="flex justify-center md:justify-end ">
+              <img src={logo3} alt="Lumelink Technologies Limited" className=" shadow-glow  h-[500px] w-[2900px]" />
+            </div>
+          </div>
+        </section>
         {/* Team Section */}
         <section 
           ref={teamRef} 

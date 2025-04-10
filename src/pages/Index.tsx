@@ -6,6 +6,7 @@ import StatsSection from "@/components/StatsSection";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Shield, Server, Cpu, Database, Wrench, Wifi } from "lucide-react";
+import logo2 from "@/logo/logo2.jpeg";
 
 const Index = () => {
   const features = [
@@ -126,6 +127,25 @@ const Index = () => {
       
       <main>
         <HeroSection />
+        
+        {/* New Section */}
+        <section className="py-20">
+          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div className="text-center md:text-left mb-8 md:mb-0">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Lumelink: Innovating Tomorrow’s Technology, Today
+              </h2>
+              <p className="text-gray-300">
+              Lumelink Technologies Limited delivers cutting-edge ICT solutions tailored to modern business needs. From infrastructure to innovation, we empower organizations with tools to thrive in an ever-evolving digital world.
+
+
+              </p>
+            </div>
+            <div className="flex justify-center md:justify-end ">
+              <img src={logo2} alt="Lumelink Technologies Limited" className=" shadow-glow  h-[400px] w-[2000px]" />
+            </div>
+          </div>
+        </section>
         
         {/* Feature Section */}
         <section 

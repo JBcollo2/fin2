@@ -133,7 +133,7 @@ const Index = () => {
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <div className="text-center md:text-left mb-8 md:mb-0">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Lumelink: Innovating Tomorrow’s Technology, Today
+                Lumelink: Crafting Digital Exelence
               </h2>
               <p className="text-gray-300">
               Lumelink Technologies Limited delivers cutting-edge ICT solutions tailored to modern business needs. From infrastructure to innovation, we empower organizations with tools to thrive in an ever-evolving digital world.

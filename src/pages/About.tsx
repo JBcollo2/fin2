@@ -15,7 +15,19 @@ const About = () => {
   const coreValuesRef = useRef(null);
   const whyChooseRef = useRef(null);
   const teamRef = useRef(null);
-
+  useEffect(() => {
+    // Animation for section entry
+    if (teamRef.current) {
+      setTimeout(() => {
+        teamRef.current.classList.remove('opacity-0', 'translate-y-10');
+      }, 300);
+    }
+  }, []);
+  
+  // Add pulsing animation for connections
+  const pulseStyle = {
+    animation: 'pulse 2s infinite',
+  };
   useEffect(() => {
     // Set up intersection observer
     const observerOptions = {
@@ -284,72 +296,86 @@ const About = () => {
           </div>
         </section>
 
-
-        {/* {"new section"} */}
-        <section className="py-20">
-          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <div className="text-center md:text-left mb-8 md:mb-0">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Lumelink: Your Trusted Partner in ICT Solutions
-              </h2>
-              <p className="text-gray-300">
-              Founded just two years ago, Lumelink Technologies Limited has swiftly established itself as a go-to provider of comprehensive technology services. Our expertise covers ICT hardware and software supply, telecom infrastructure, maintenance, and transformative tech projects that drive business success.
-              </p>
-            </div>
-            <div className="flex justify-center md:justify-end ">
-              <img src={logo3} alt="Lumelink Technologies Limited" className=" shadow-glow  h-[500px] w-[2900px]" />
-            </div>
-          </div>
-        </section>
-        {/* Team Section */}
+        {/* Team Section with spread out cards and curved branches */}
         <section 
-          ref={teamRef} 
-          className="mb-20 opacity-0 translate-y-10 transition-all duration-1000"
-        >
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Our Leadership Team</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Meet the experts leading our technological revolution
-            </p>
-          </div>
+      ref={teamRef} 
+      className="mb-20 opacity-0 translate-y-10 transition-all duration-1000"
+    >
+      <div className="text-center mb-16">
+        <h2 className="text-3xl font-bold mb-4">Our Leadership Team</h2>
+        <p className="text-gray-300 max-w-2xl mx-auto">
+          Meet the experts leading our technological revolution
+        </p>
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sammy Otieno Onyango",
-                title: "Director",
-                bio: "Leading our GIS, software development, and cybersecurity initiatives with expertise in spatial data analysis.",
-                education: "BSc. Geospatial Information Science"
-              },
-              {
-                name: "Stephen Ochieng Odhiambo",
-                title: "Director",
-                bio: "Overseeing network design, fiber optics, and telecommunications with a focus on infrastructure reliability.",
-                education: "BSc. Electrical and Telecommunications"
-              },
-              {
-                name: "Technical Lead",
-                title: "Head of Innovation",
-                bio: "Drives our research and development of emerging technologies including AI and blockchain solutions.",
-                education: "MS, Computer Science"
-              }
-            ].map((member, index) => (
-              <div 
-                key={index} 
-                className="glass-effect rounded-2xl p-6 flex flex-col transform transition-all duration-500 hover:scale-105 hover:shadow-neon"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-futuristic-cyan to-futuristic-purple mb-4 flex items-center justify-center">
-                  <Users size={30} className="text-white" />
-                </div>
-                <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className="text-futuristic-cyan mb-2">{member.title}</p>
-                <p className="text-sm text-gray-300 mb-4">{member.bio}</p>
-                <p className="text-xs font-medium text-gray-400 mt-auto">{member.education}</p>
-              </div>
-            ))}
+      <div className="flex flex-col items-center relative">
+        {/* CEO - Top level */}
+        <div className="glass-effect rounded-2xl p-6 flex flex-col items-center transform transition-all duration-500 hover:scale-105 hover:shadow-neon mb-12 z-10 bg-gray-900 bg-opacity-70">
+          <h3 className="text-xl font-bold mb-4">Chief Executive Officer</h3>
+          <p className="text-blue-400 mb-2">Pamela Achieng Waya</p>
+          <p className="text-sm text-gray-300 mb-4">Defines company vision and strategy, ensures long-term growth and sustainability.</p>
+        </div>
+        
+        {/* Vertical line from CEO to second level - More precise positioning with pulse */}
+        <div className="w-1 h-16 bg-blue-500 absolute animate-pulse" style={{top: '12rem', left: '50%', transform: 'translateX(-50%)'}}></div>
+        
+        {/* Second level - COO and CTO row */}
+        <div className="flex justify-center w-full mb-16 mt-8 relative">
+          {/* Horizontal line connecting COO and CTO */}
+          <div className="absolute h-1 bg-blue-500 animate-pulse" style={{top: '0', left: '25%', right: '25%'}}></div>
+          
+          {/* Vertical lines to COO and CTO */}
+          <div className="absolute w-1 h-12 bg-blue-500 animate-pulse" style={{top: '0', left: '25%'}}></div>
+          <div className="absolute w-1 h-12 bg-blue-500 animate-pulse" style={{top: '0', right: '25%'}}></div>
+          
+          <div className="w-full flex justify-around">
+            {/* COO Box */}
+            <div className="glass-effect rounded-2xl p-6 flex flex-col items-center transform transition-all duration-500 hover:scale-105 hover:shadow-neon z-10 bg-gray-900 bg-opacity-70 w-1/3 mt-12">
+              <h3 className="text-xl font-bold mb-4">Chief Operating Officer</h3>
+              <p className="text-blue-400 mb-2">Sammy Otieno Onyango</p>
+              <p className="text-sm text-gray-300 mb-4">Oversees daily operations, ensures efficiency and effectiveness.</p>
+            </div>
+            
+            {/* CTO Box */}
+            <div className="glass-effect rounded-2xl p-6 flex flex-col items-center transform transition-all duration-500 hover:scale-105 hover:shadow-neon z-10 bg-gray-900 bg-opacity-70 w-1/3 mt-12">
+              <h3 className="text-xl font-bold mb-4">Chief Technology Officer</h3>
+              <p className="text-blue-400 mb-2">Stephen Ochieng</p>
+              <p className="text-sm text-gray-300 mb-4">Leads technology development and innovation.</p>
+            </div>
           </div>
-        </section>
+        </div>
+        
+        {/* Vertical lines to third level - More precise positioning with pulse */}
+        <div className="w-1 h-24 bg-blue-500 absolute animate-pulse" style={{top: '20rem', left: '25%'}}></div>
+        <div className="w-1 h-24 bg-blue-500 absolute animate-pulse" style={{top: '20rem', right: '25%'}}></div>
+        
+        {/* Horizontal line connecting third level vertical lines */}
+        <div className="h-1 bg-blue-500 absolute animate-pulse" style={{top: '22rem', left: '25%', right: '25%'}}></div>
+        
+        {/* Third level - PM and HRM row */}
+        <div className="flex justify-center w-full relative mt-8">
+          {/* Vertical lines to PM and HRM */}
+          <div className="absolute w-1 h-12 bg-blue-500 animate-pulse" style={{top: '0', left: '25%'}}></div>
+          <div className="absolute w-1 h-12 bg-blue-500 animate-pulse" style={{top: '0', right: '25%'}}></div>
+          
+          <div className="w-full flex justify-around">
+            {/* PM Box */}
+            <div className="glass-effect rounded-2xl p-6 flex flex-col items-center transform transition-all duration-500 hover:scale-105 hover:shadow-neon z-10 bg-gray-900 bg-opacity-70 w-1/3 mt-12">
+              <h3 className="text-xl font-bold mb-4">Project Manager</h3>
+              <p className="text-blue-400 mb-2">Wilfred Dacha Ajwala</p>
+              <p className="text-sm text-gray-300 mb-4">Manages projects and ensures timely delivery.</p>
+            </div>
+            
+            {/* HRM Box */}
+            <div className="glass-effect rounded-2xl p-6 flex flex-col items-center transform transition-all duration-500 hover:scale-105 hover:shadow-neon z-10 bg-gray-900 bg-opacity-70 w-1/3 mt-12">
+              <h3 className="text-xl font-bold mb-4">Human Resource Manager</h3>
+              <p className="text-blue-400 mb-2">Alex Ngunjiri Maina</p>
+              <p className="text-sm text-gray-300 mb-4">Oversees recruitment and employee welfare.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
       </main>
 
       <Footer />

@@ -11,7 +11,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FeatureCard from "@/components/FeatureCard";
 import GoogleMapEmbed from "./GoogleMapEmbed"; // Assuming GoogleMapEmbed.jsx is in the same directory or adjust path
 import { Label } from "@/components/ui/label";
@@ -122,26 +122,6 @@ const Contact = () => {
                                 <GoogleMapEmbed location={companyLocation} className="w-full h-full" />
                             </div>
                         </Card>
-
-                        {/* Social Media Links */}
-                        <div className="mt-8">
-                            <h3 className="text-xl font-bold mb-4">
-                                Connect With Us on Social Media
-                            </h3>
-                            <div className="flex flex-wrap gap-4">
-                                {socialMediaLinks.map((social, index) => (
-                                    <Button
-                                        key={index}
-                                        variant="outline"
-                                        className="flex items-center gap-2 border-white/20 hover:bg-white/5"
-                                        onClick={() => window.open(social.url, "_blank")}
-                                    >
-                                        <social.icon size={18} />
-                                        {social.username}
-                                    </Button>
-                                ))}
-                            </div>
-                        </div>
                     </div>
 
                     <div>
@@ -155,14 +135,18 @@ const Contact = () => {
                                 />
                             </div>
                         </Card>
+                    </div>
+                </section>
 
-                        {/* Contact Form */}
-                        <Card className="glass-effect border-0">
-                            <CardContent className="p-6">
-                                <h3 className="text-2xl font-bold mb-6">
+                {/* Contact Form Section */}
+                <section className="py-20">
+                    <div className="container mx-auto max-w-2xl">
+                        <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                            <CardContent className="p-8">
+                                <h3 className="text-2xl font-bold mb-6 text-center">
                                     Send Us a Message
                                 </h3>
-                                <p className="text-gray-300 mb-4">
+                                <p className="text-gray-300 mb-6 text-center">
                                     Fill out the form below, and our team will get back to you as soon as possible.
                                 </p>
                                 <form className="space-y-5">
@@ -208,8 +192,6 @@ const Contact = () => {
                                     <Button className="w-full bg-gradient-to-r from-futuristic-cyan to-futuristic-purple hover:opacity-90">
                                         Send Message
                                     </Button>
-                                    {/* Placeholder for Confirmation Message */}
-                                    {/* <p className="text-green-500 mt-2">Your message has been sent successfully!</p> */}
                                 </form>
                             </CardContent>
                         </Card>
@@ -217,47 +199,115 @@ const Contact = () => {
                 </section>
 
                 {/* FAQ Section */}
-                <section className="mb-20">
-                    <div className="max-w-3xl mx-auto">
-                        <h2 className="text-3xl font-bold mb-8 text-center">
+                <section className="py-20">
+                    <div className="container mx-auto max-w-6xl">
+                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                             Frequently Asked Questions
                         </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                                <CardHeader className="p-6">
+                                    <CardTitle className="text-xl font-semibold text-futuristic-cyan">
+                                        What does your Project Management & Maintenance (PMM) service include?
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-6 pt-0">
+                                    <p className="text-gray-300">
+                                        Our PMM services encompass the planning, execution, and monitoring of projects, as well as ongoing maintenance to ensure optimal performance and longevity.
+                                    </p>
+                                </CardContent>
+                            </Card>
 
-                        <div className="space-y-6">
-                            {[
-                                {
-                                    question:
-                                        "What are your business hours?",
-                                    answer:
-                                        "Our physical branches are open Monday through Friday from 8am to 8pm. Our digital banking services are available 24/7/365.",
-                                },
-                                {
-                                    question:
-                                        "How quickly can I open an account?",
-                                    answer:
-                                        "With our digital onboarding process, you can open a new account in under 5 minutes, all from the comfort of your home.",
-                                },
-                                {
-                                    question:
-                                        "Is there a waiting period for new cards?",
-                                    answer:
-                                        "Virtual cards are available instantly upon account approval. Physical smart cards are delivered within 2-3 business days.",
-                                },
-                                {
-                                    question:
-                                        "What security measures do you have in place?",
-                                    answer:
-                                        "We implement multi-factor authentication, biometric verification, AI fraud detection, and end-to-end encryption for all transactions.",
-                                },
-                            ].map((faq, index) => (
-                                <div
-                                    key={index}
-                                    className="glass-effect rounded-xl p-6"
-                                >
-                                    <h4 className="text-lg font-semibold mb-2">{faq.question}</h4>
-                                    <p className="text-gray-300">{faq.answer}</p>
-                                </div>
-                            ))}
+                            <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                                <CardHeader className="p-6">
+                                    <CardTitle className="text-xl font-semibold text-futuristic-cyan">
+                                        Can you provide a detailed list of the ICT hardware and software you supply?
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-6 pt-0">
+                                    <p className="text-gray-300">
+                                        We offer a comprehensive range of ICT hardware and software solutions. Please contact our sales team for a detailed catalog tailored to your specific needs.
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                                <CardHeader className="p-6">
+                                    <CardTitle className="text-xl font-semibold text-futuristic-cyan">
+                                        What types of telecommunication services do you offer?
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-6 pt-0">
+                                    <p className="text-gray-300">
+                                        Our telecommunication services include network setup and support, voice and data solutions, and communication infrastructure management.
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                                <CardHeader className="p-6">
+                                    <CardTitle className="text-xl font-semibold text-futuristic-cyan">
+                                        What kind of Tech Consultancy & Custom Solutions can you provide?
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-6 pt-0">
+                                    <p className="text-gray-300">
+                                        We offer expert consultation to understand your technology challenges and provide customized solutions to meet your unique business requirements.
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                                <CardHeader className="p-6">
+                                    <CardTitle className="text-xl font-semibold text-futuristic-cyan">
+                                        What falls under your Innovation & Emerging Technologies offerings?
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-6 pt-0">
+                                    <p className="text-gray-300">
+                                        This includes services related to the latest technological advancements such as AI, IoT, blockchain, and other emerging innovations to help your business stay ahead.
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                                <CardHeader className="p-6">
+                                    <CardTitle className="text-xl font-semibold text-futuristic-cyan">
+                                        What does your Cybersecurity Protection service entail?
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-6 pt-0">
+                                    <p className="text-gray-300">
+                                        Our cybersecurity services include threat assessment, ethical hacking, digital security awareness training, and implementation of robust data protection measures.
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                                <CardHeader className="p-6">
+                                    <CardTitle className="text-xl font-semibold text-futuristic-cyan">
+                                        Do you offer support after service implementation?
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-6 pt-0">
+                                    <p className="text-gray-300">
+                                        Yes, we provide comprehensive support and maintenance packages to ensure the continued success of the solutions we implement.
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="glass-effect border-0 shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.5)] transition-all duration-300">
+                                <CardHeader className="p-6">
+                                    <CardTitle className="text-xl font-semibold text-futuristic-cyan">
+                                        How can I request a quote for your services?
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-6 pt-0">
+                                    <p className="text-gray-300">
+                                        You can easily request a quote by filling out the contact form on our website or by contacting our sales team directly.
+                                    </p>
+                                </CardContent>
+                            </Card>
                         </div>
                     </div>
                 </section>

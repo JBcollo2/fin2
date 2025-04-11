@@ -7,7 +7,8 @@ import {
   BarChart3, 
   Shield, 
   ChevronDown,
-  Menu
+  Menu,
+  Cpu, Database, Wrench, Wifi
 } from "lucide-react";
 import { 
   DropdownMenu,
@@ -28,7 +29,8 @@ const Navbar = () => {
             <img src={logo1} alt="Lumelink Technologies" className="h-12 mr-3" />
             <span className="hidden sm:inline text-xl font-bold">
               <span className="text-futuristic-cyan">Lume</span>
-              <span className="text-white">link</span>
+              <span className="text-white">link Technology LTD</span>
+              
             </span>
           </Link>
         </div>
@@ -51,8 +53,20 @@ const Navbar = () => {
                 <span>ICT Hardware & Software</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="flex items-center gap-2">
-                <BarChart3 size={16} className="text-futuristic-cyan" />
+                <Wrench size={16} className="text-futuristic-cyan" />
                 <span>Tech Consultancy</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2">
+                <Cpu size={16} className="text-futuristic-cyan" />
+                <span>Project Management</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2">
+                <Wifi size={16} className="text-futuristic-cyan" />
+                <span>Telecommunication Services</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="flex items-center gap-2">
+                <Server size={16} className="text-futuristic-cyan" />
+                <span>Innovation & Emerging Technologies</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -61,7 +75,7 @@ const Navbar = () => {
             <Button variant="ghost">About</Button>
           </Link>
           <Link to="/services">
-            <Button variant="ghost">Technologies</Button>
+            <Button variant="ghost">Services</Button>
           </Link>
           <Link to="/contact">
             <Button variant="ghost">Contact</Button>
@@ -92,7 +106,7 @@ const Navbar = () => {
               <Button variant="ghost" className="justify-start w-full">About</Button>
             </Link>
             <Link to="/services">
-              <Button variant="ghost" className="justify-start w-full">Technologies</Button>
+              <Button variant="ghost" className="justify-start w-full">Services</Button>
             </Link>
             <Link to="/contact">
               <Button variant="ghost" className="justify-start w-full">Contact</Button>

@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { CreditCard, GithubIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+import { CreditCard, GithubIcon, InstagramIcon, LinkedinIcon, TwitterIcon, FacebookIcon } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
           
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Stay ahead with Lumelink</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">Stay ahead with Lumelink Technology LTD</h3>
               <p className="text-gray-300">
                 Get the latest updates, news, and exclusive offers directly to your inbox.
               </p>
@@ -45,17 +45,17 @@ const Footer = () => {
               Next-generation banking for the digital era. Secure, fast, and intuitive.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-futuristic-cyan transition-colors">
+              <a href="https://x.com/LumelinkTechLtd" className="hover:text-futuristic-cyan transition-colors">
                 <TwitterIcon size={18} />
               </a>
-              <a href="#" className="hover:text-futuristic-cyan transition-colors">
+              {/* <a href="#" className="hover:text-futuristic-cyan transition-colors">
                 <InstagramIcon size={18} />
-              </a>
-              <a href="#" className="hover:text-futuristic-cyan transition-colors">
+              </a> */}
+              {/* <a href="#" className="hover:text-futuristic-cyan transition-colors">
                 <LinkedinIcon size={18} />
-              </a>
-              <a href="#" className="hover:text-futuristic-cyan transition-colors">
-                <GithubIcon size={18} />
+              </a> */}
+              <a href="https://www.facebook.com/profile.php?id=61574687134467" className="hover:text-futuristic-cyan transition-colors">
+                <FacebookIcon size={18} />
               </a>
             </div>
           </div>
@@ -73,10 +73,10 @@ const Footer = () => {
           <div>
             <h4 className="font-medium mb-6">Products</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Smart Cards</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Investments</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Crypto Wallet</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Financial AI</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Cybersecurity Protection</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Tech Consultancy & Custom Solutions</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">ICT Hardware & Software Supply</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Project Management & Maintenance (PMM)</a></li>
             </ul>
           </div>
           
@@ -94,7 +94,7 @@ const Footer = () => {
         {/* Bottom footer */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Lumelink. All rights reserved.
+            © {new Date().getFullYear()} Lumelink Tech LTD. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">

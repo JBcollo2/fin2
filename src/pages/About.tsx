@@ -110,15 +110,25 @@ const About = () => {
               </div>
               
               <div className="relative">
-                <div className="w-full h-[300px] bg-gradient-to-br from-futuristic-cyan/20 to-futuristic-purple/20 rounded-xl flex items-center justify-center transform transition-transform duration-700 hover:scale-105">
-                  <div className="w-3/4 h-3/4 glass-effect rounded-xl flex items-center justify-center">
-                    <div className="text-center">
-                      <h3 className="text-2xl font-bold mb-2 gradient-text">Emerging Technologies</h3>
-                      <p className="text-gray-300">Creating Digital Excellence</p>
+                  <div className="w-full h-[300px] bg-gradient-to-br from-futuristic-cyan/20 to-futuristic-purple/20 rounded-xl flex items-center justify-center transform transition-transform duration-700 hover:scale-105">
+                    <div className="w-3/4 h-3/4 glass-effect rounded-xl relative">
+                      {/* Image with full width and height */}
+                      <img
+                        src="https://th.bing.com/th/id/OIP.qsqdetZ60fP_CRSPnej1iQHaEL?w=626&h=353&rs=1&pid=ImgDetMain"
+                        alt="Lumelink Technologies Achievements"
+                        className="w-full h-full object-cover rounded-xl  opacity-70"
+                      />
+                      
+                      {/* Text overlay with higher z-index */}
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="text-center">
+                          <h3 className="text-2xl font-bold mb-2 text-black">Emerging Technologies</h3>
+                          <p className="text-gray-300">Creating Digital Excellence</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </section>
@@ -361,14 +371,32 @@ const About = () => {
           <div className="w-full flex justify-around">
             {/* PM Box */}
             <div className="glass-effect rounded-2xl p-6 flex flex-col items-center transform transition-all duration-500 hover:scale-105 hover:shadow-neon z-10 bg-gray-900 bg-opacity-70 w-1/3 mt-12">
-              <h3 className="text-xl font-bold mb-4">Project Manager</h3>
-              <p className="text-blue-400 mb-2">Wilfred Dacha Ajwala</p>
+              <h3 className="text-xl font-bold mb-4">Director</h3>
+              <p className="text-blue-400 mb-2">Joyce Onjiko</p>
               <p className="text-sm text-gray-300 mb-4">Manages projects and ensures timely delivery.</p>
             </div>
             
             {/* HRM Box */}
             <div className="glass-effect rounded-2xl p-6 flex flex-col items-center transform transition-all duration-500 hover:scale-105 hover:shadow-neon z-10 bg-gray-900 bg-opacity-70 w-1/3 mt-12">
-              <h3 className="text-xl font-bold mb-4">Human Resource Manager</h3>
+              <h3 className="text-xl font-bold mb-4">Project Manager</h3>
+              <p className="text-blue-400 mb-2">Wilfred Dacha Ajwala</p>
+              <p className="text-sm text-gray-300 mb-4">Coordinates project teams and ensures quality deliverables.</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* NEW ADDITION: Vertical line from PM to fourth level */}
+        <div className="w-1 h-24 bg-blue-500 absolute animate-pulse" style={{top: '35rem', left: '25%'}}></div>
+        
+        {/* Fourth level - New position under PM */}
+        <div className="flex justify-start w-full relative mt-24">
+          {/* Vertical line to new position */}
+          <div className="absolute w-1 h-12 bg-blue-500 animate-pulse" style={{top: '0', left: '25%'}}></div>
+          
+          <div className="w-full flex justify-start">
+            {/* New position Box */}
+            <div className="glass-effect rounded-2xl p-6 flex flex-col items-center transform transition-all duration-500 hover:scale-105 hover:shadow-neon z-10 bg-gray-900 bg-opacity-70 w-1/3 mt-12 ml-24">
+              <h3 className="text-xl font-bold mb-4">Human-Resource Manager</h3>
               <p className="text-blue-400 mb-2">Alex Ngunjiri Maina</p>
               <p className="text-sm text-gray-300 mb-4">Oversees recruitment and employee welfare.</p>
             </div>

@@ -7,36 +7,36 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Shield, Server, Cpu, Database, Wrench, Wifi } from "lucide-react";
 import logo2 from "@/logo/logo2.jpeg";
-
+import ImageSlider from "./ImageSlider";
 const Index = () => {
   const features = [
     {
       icon: Cpu,
-      title: "Artificial Intelligence",
+      title: "Project Management & Maintenance (PMM)",
       description: "AI enables machines to learn and perform tasks requiring human intelligence, such as voice recognition and decision-making.",
       gradient: "from-blue-500 to-cyan-700"
     },
     {
       icon: Database,
-      title: "Blockchain Technology",
+      title: "ICT Hardware & Software Supply",
       description: "A decentralized and secure way of recording transactions, widely used in cryptocurrencies and supply chain management.",
       gradient: "from-futuristic-cyan to-blue-700"
     },
     {
       icon: Wifi,
-      title: "Internet of Things",
+      title: "Telecommunication Services",
       description: "The interconnection of physical devices that communicate and exchange data, like smart homes and wearable devices.",
       gradient: "from-futuristic-purple to-purple-700"
     },
     {
       icon: Wrench,
-      title: "Process Innovation",
+      title: "Tech Consultancy & Custom Solutions",
       description: "Enhancing production or operational processes to increase efficiency through automation in manufacturing.",
       gradient: "from-amber-500 to-orange-700"
     },
     {
       icon: Server,
-      title: "ICT Hardware & Software",
+      title: "Innovation & Emerging Technologies",
       description: "Comprehensive supply of technology infrastructure solutions tailored to your business needs.",
       gradient: "from-green-500 to-emerald-700"
     },
@@ -121,6 +121,20 @@ const Index = () => {
     };
   }, []);
 
+
+  const sliderImages = [
+    { src: logo2, alt: "Lumelink Technologies Limited" },
+    { src: "https://th.bing.com/th/id/OIP.t_i68xv6mRZFrX-CDUxktAHaEO?w=329&h=187&c=7&r=0&o=5&pid=1.7", alt: "Lumelink Infrastructure" },
+    { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREL76GdMKfn3eiC5xfGLg5Ec173CyVC5URCQ&s", alt: "Lumelink Solutions" },
+    { src: "https://th.bing.com/th/id/OIP.QrHa1hxwYdmFb91TenLjZQHaEK?w=299&h=180&c=7&r=0&o=5&pid=1.7", alt: "Lumelink Solutions" },
+    { src: "https://th.bing.com/th/id/OIP.FKRg7LXGabMdEuE6aBSMegHaE7?w=258&h=180&c=7&r=0&o=5&pid=1.7", alt: "Lumelink Solutions" },
+    { src: "https://th.bing.com/th/id/OIP.QrHa1hxwYdmFb91TenLjZQHaEK?w=299&h=180&c=7&r=0&o=5&pid=1.7", alt: "Lumelink Technologies Limited" },
+  ]
+  // Debug: Log images on mount
+  useEffect(() => {
+    console.log('Slider images:', sliderImages);
+  }, [sliderImages]);
+
   return (
     <div className="min-h-screen bg-futuristic-dark text-white overflow-x-hidden">
       <Navbar />
@@ -129,23 +143,22 @@ const Index = () => {
         <HeroSection />
         
         {/* New Section */}
-        <section className="py-20">
-          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <div className="text-center md:text-left mb-8 md:mb-0">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Lumelink: Crafting Digital Exelence
-              </h2>
-              <p className="text-gray-300">
-              Lumelink Technologies Limited delivers cutting-edge ICT solutions tailored to modern business needs. From infrastructure to innovation, we empower organizations with tools to thrive in an ever-evolving digital world.
-
-
-              </p>
-            </div>
-            <div className="flex justify-center md:justify-end ">
-              <img src={logo2} alt="Lumelink Technologies Limited" className=" shadow-glow  h-[400px] w-[2000px]" />
-            </div>
-          </div>
-        </section>
+        <section className="py-24 min-h-[500px] flex items-center">
+  <div className="container mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between">
+    <div className="text-center md:text-left mb-12 md:mb-0 md:w-2/5">
+      <h2 className="text-3xl md:text-5xl font-bold mb-6">
+        Lumelink: Crafting Digital Excellence
+      </h2>
+      <p className="text-gray-300 text-lg max-w-xl">
+        Lumelink Technologies Limited delivers cutting-edge ICT solutions tailored to modern business needs.
+        From infrastructure to innovation, we empower organizations with tools to thrive in an ever-evolving digital world.
+      </p>
+    </div>
+    <div className="flex justify-center md:justify-end w-full md:w-3/5">
+      <ImageSlider images={sliderImages} />
+    </div>
+  </div>
+</section>
         
         {/* Feature Section */}
         <section 
@@ -230,7 +243,7 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Our Leadership Team */}
+        {/* Achievements Section */}
         <section 
           ref={teamSectionRef}
           className="py-20 relative opacity-0 -translate-y-8 transition-all duration-1000"
@@ -238,64 +251,45 @@ const Index = () => {
           <div className="container mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Our Leadership Team
+                Our Achievements & Milestones
               </h2>
               <p className="text-gray-300">
-                Meet the experts leading our technological innovation
+                Celebrating our journey of innovation and excellence in the tech industry
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass-effect rounded-2xl p-8 transform transition-all duration-500 hover:scale-105 hover:shadow-neon">
-                <h3 className="text-2xl font-bold mb-4">Sammy Otieno Onyango</h3>
-                <p className="text-futuristic-cyan mb-4">Director</p>
-                <p className="text-gray-300 italic mb-6">BSc. Geospatial Information Science</p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-futuristic-cyan/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Shield className="text-futuristic-cyan" size={14} />
-                    </div>
-                    <span>GIS & Spatial Analysis: ArcGIS, QGIS, Remote Sensing, GPS Data Processing</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-futuristic-cyan/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Shield className="text-futuristic-cyan" size={14} />
-                    </div>
-                    <span>Software Development: C, C++, HTML, CSS, JavaScript, Front-End Web Development</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-futuristic-cyan/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Shield className="text-futuristic-cyan" size={14} />
-                    </div>
-                    <span>Cybersecurity & Data Protection: Ethical Hacking, Digital Security Awareness</span>
-                  </li>
-                </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="glass-effect rounded-2xl p-6 transform transition-all duration-500 hover:scale-105 hover:shadow-neon">
+                  <h3 className="text-2xl font-bold mb-4">Industry Recognition</h3>
+                  <p className="text-gray-300">
+                    Awarded for excellence in ICT solutions and recognized as a leading technology service provider in the region.
+                  </p>
+                </div>
+                
+                <div className="glass-effect rounded-2xl p-6 transform transition-all duration-500 hover:scale-105 hover:shadow-neon">
+                  <h3 className="text-2xl font-bold mb-4">Client Success</h3>
+                  <p className="text-gray-300">
+                    Successfully implemented solutions for over 100+ businesses, helping them achieve digital transformation goals.
+                  </p>
+                </div>
+                
+                <div className="glass-effect rounded-2xl p-6 transform transition-all duration-500 hover:scale-105 hover:shadow-neon">
+                  <h3 className="text-2xl font-bold mb-4">Innovation Hub</h3>
+                  <p className="text-gray-300">
+                    Pioneering new technologies and setting industry standards in cybersecurity and digital infrastructure.
+                  </p>
+                </div>
               </div>
               
-              <div className="glass-effect rounded-2xl p-8 transform transition-all duration-500 hover:scale-105 hover:shadow-neon">
-                <h3 className="text-2xl font-bold mb-4">Stephen Ochieng Odhiambo</h3>
-                <p className="text-futuristic-cyan mb-4">Director</p>
-                <p className="text-gray-300 italic mb-6">BSc. Electrical and Telecommunications</p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-futuristic-purple/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Shield className="text-futuristic-purple" size={14} />
-                    </div>
-                    <span>Monitoring alarms and resolving first line faults</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-futuristic-purple/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Shield className="text-futuristic-purple" size={14} />
-                    </div>
-                    <span>Fiber Stringing, Splicing and Termination</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-futuristic-purple/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Shield className="text-futuristic-purple" size={14} />
-                    </div>
-                    <span>Network Design, Implementation and Management</span>
-                  </li>
-                </ul>
+              <div className="relative">
+                <div className="glass-effect rounded-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-neon">
+                  <img 
+                    src="https://th.bing.com/th/id/OIP.qsqdetZ60fP_CRSPnej1iQHaEL?w=626&h=353&rs=1&pid=ImgDetMain" 
+                    alt="Lumelink Technologies Achievements" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
